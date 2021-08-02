@@ -3,6 +3,10 @@ from .CommentsModel import CommentsModel
 from .UsersModel import UsersModel
 from .PostsModel import PostsModel
 
+# create database myimageboard_1;
+# CREATE USER 'myimageboard_1'@'localhost' IDENTIFIED WITH mysql_native_password BY 'myimageboard_1';
+# GRANT ALL ON myimageboard_1.* TO 'myimageboard_1'@'localhost';
+
 class InitModel(MainModel):
 
     def __init__(self):

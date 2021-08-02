@@ -14,7 +14,13 @@ class App extends React.Component
 	{
 		super(props)
 		
+		let domainMatches = location.href.match(/(?<schemeDomain>https?:\/\/[^\/]+)/)
+		
 		let myU = jsonServerProvider('http://192.168.88.246:6543/rest/v1-react-admin')
+		
+		if (domainMatches !== null)
+			myU = jsonServerProvider(myU[0] + '/rest/v1-react-admin')
+		
 		let test = jsonServerProvider('https://jsonplaceholder.typicode.com')
 		
 		this.state = {
