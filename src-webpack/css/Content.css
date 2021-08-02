@@ -1,0 +1,10 @@
+.ContentContainer
+{
+	margin-top: 1rem ;
+}
+
+.ContentContainer .PostWrapper:not(:first-child)
+{
+	margin-top: 1.7rem;
+	margin-bottom: 1.7rem;
+}

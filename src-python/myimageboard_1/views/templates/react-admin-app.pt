@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>${name} - My image Board</title>
+</head>
+
+<body>
+  <div id="root_react_admin_app_v100"></div>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <script src="${request.static_url('myimageboard_1:views/assets/js/react-admin-v100-bundle.js')}"></script>
+</body>
+
+</html>

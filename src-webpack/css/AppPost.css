@@ -1,0 +1,14 @@
+body
+{
+	background-color: #000;
+}
+
+body > div#root_post
+{
+	background-color: #000;
+}
+
+.AppPost
+{
+  margin: 1rem;
+}

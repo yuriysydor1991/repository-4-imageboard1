@@ -1,0 +1,14 @@
+body
+{
+	background-color: #000;
+}
+
+body > div#root_login
+{
+	background-color: #000;
+}
+
+.AppLogin
+{
+  margin: 1rem;
+}

@@ -1,0 +1,10 @@
+.ContentPagination
+{
+	margin-bottom: 1.7rem;
+	text-align: center;
+}
+
+a.PaginationButton:not(:last-child)
+{
+	margin-right: 1rem;
+}

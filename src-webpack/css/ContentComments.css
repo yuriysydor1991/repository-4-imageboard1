@@ -1,0 +1,15 @@
+.ContentComments
+{
+	margin-top: 0.7rem;
+}
+
+img.commentUserLogo
+{
+	max-width: 2rem;
+	max-height: 2rem;
+}
+
+.ContentCommentAlert
+{
+	margin-top: 0.3rem;
+}
