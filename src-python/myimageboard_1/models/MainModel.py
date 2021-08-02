@@ -32,6 +32,7 @@ class MainModel:
             cursor.execute(execQuery)
         except mysql.connector.Error as err:
             print("Failed query: {}".format(err))
+            cursor.close()
             return False
             
         cursor.close()
@@ -50,6 +51,7 @@ class MainModel:
             cursor.execute(query)
         except mysql.connector.Error as err:
             print("Failed query: {}".format(err))
+            cursor.close()
             return None
             
         aggr = []
@@ -73,6 +75,7 @@ class MainModel:
             cursor.execute(query)
         except mysql.connector.Error as err:
             print("Failed query: {}".format(err))
+            cursor.close()
             return None
         
 
