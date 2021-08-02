@@ -24,8 +24,6 @@ class UsersModel(MainModel):
         
     def signin(self, userId):
         UsersModel.User = self.get(userId)
-        print("There is some user")
-        print(UsersModel.User)
     
     def getByUserPass(self, nickname, password):
         if len(nickname) == 0 or len(password) == 0 :

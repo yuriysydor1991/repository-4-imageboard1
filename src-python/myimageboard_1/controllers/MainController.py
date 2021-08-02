@@ -12,7 +12,6 @@ class MainController:
             self.session_signin()
         
     def session_signin(self):
-        print("Trying to login")
         if hasattr(self, "request") and hasattr(self.request, "session") and "user_id" in self.request.session:
             self.users.signin(self.request.session['user_id'])
             

@@ -23,7 +23,5 @@ class GeneralModel:
 
     def post_comments(self, request):
         post = self.main.catalog_post(request, request.params.get('post_url', None))
-        print("Fetched post:")
-        print(post)
         return self.main.post_comments(request, post['id'])
     

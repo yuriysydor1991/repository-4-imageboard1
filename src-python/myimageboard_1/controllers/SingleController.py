@@ -20,7 +20,6 @@ class SingleController(MainController):
 
         if postUrl != None and len(postUrl) > 0:
             postData = self.posts.catalog_post(self.request, postUrl)
-            print(postData)
             if postData != None and "id" in postData:
                 self.posts.incrementView(postData["id"])
                 return {

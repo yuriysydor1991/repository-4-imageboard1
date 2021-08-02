@@ -97,13 +97,8 @@ class PostsModel(MainModel):
     def catalog_posts(self, request = None, limit=10, offset=0, order="date", direction="DESC", search=None):
         getDisp = request.params.get('page', None)
 
-        print(request.params)
-
         if getDisp != None:
-            print("Displacement found " + str(getDisp))
             offset = int(getDisp) * limit
-
-        print("Offset " + str(offset))
 
         query = self.build_catalog_query(limit, offset, order, direction, search)
         queryCnt = self.build_catalog_query(limit, offset, order, direction, search, True)

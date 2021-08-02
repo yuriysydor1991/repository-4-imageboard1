@@ -7,6 +7,8 @@ class MainModel:
     globalDateFormat = '%Y.%m.%d %H:%M:%S'
 
     tablePrefix = 'myimageboard_1_'
+    
+    dumpQueries = False
 
     def __init__(self):
         self.connect_mysql_connector_python()
@@ -18,7 +20,8 @@ class MainModel:
         return MainModel.connection != None and MainModel.connection.is_connected()
     
     def query(self, execQuery):
-        print(execQuery)
+        if self.dumpQueries: 
+            print(execQuery)
         
         if not self.is_connected():
             print("No DB connection available")
@@ -35,7 +38,8 @@ class MainModel:
         return True
         
     def query_get(self, query):
-        print(query)
+        if self.dumpQueries: 
+            print(query)
         
         if not self.is_connected():
             print("No DB connection available")
@@ -57,7 +61,8 @@ class MainModel:
         return aggr
         
     def query_get_single(self, query):
-        print(query)
+        if self.dumpQueries: 
+            print(query)
         
         if not self.is_connected():
             print("No DB connection available")
@@ -95,7 +100,8 @@ class MainModel:
             return
 
         if self.is_connected():
-            print('CONNECTED:')
-            print(self.connection)
+            if self.dumpQueries: 
+                print('CONNECTED:')
+                print(self.connection)
         else:
             print('NO CONNECTION!!!')
