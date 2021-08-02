@@ -1,2 +1,5 @@
 A simple image board alike site on python3 waitress pyramid mysql-connector-python 
 with react react-bootstrap react-fontawesome & react-admin
+
+Use "npm install" on project root and on src-webpack-admin
+Also python environment create instructions on create-react-project.sh
