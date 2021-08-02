@@ -19,7 +19,7 @@ class App extends React.Component
 		let myU = jsonServerProvider('http://192.168.88.246:6543/rest/v1-react-admin')
 		
 		if (domainMatches !== null)
-			myU = jsonServerProvider(myU[0] + '/rest/v1-react-admin')
+			myU = jsonServerProvider(domainMatches[0] + '/rest/v1-react-admin')
 		
 		let test = jsonServerProvider('https://jsonplaceholder.typicode.com')
 		

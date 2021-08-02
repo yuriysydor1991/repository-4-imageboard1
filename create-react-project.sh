@@ -111,5 +111,5 @@ echo "VENV env variable points to "$VENV
 sudo apt-get install python3.8-venv
 python3 -m venv $VENV
 $VENV/bin/pip install --upgrade pip setuptools
-$VENV/bin/pip install pyramid==2.0 waitress
+$VENV/bin/pip install pyramid==2.0 waitress pyramid_debugtoolbar
 $VENV/bin/pip install mysql-connector-python
