@@ -177,7 +177,7 @@ class PostsModel(MainModel):
         if postUrl != None:
             if search != None:
                 query += " AND "
-            query += " url like '" + postUrl + "'"
+            query += " url = '" + postUrl + "'"
         
         if order != None:
             query += " ORDER BY " + myT + "." + str(order) + " "
