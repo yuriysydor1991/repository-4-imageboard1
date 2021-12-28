@@ -8,7 +8,7 @@ class MainModel:
 
     tablePrefix = 'myimageboard_1_'
     
-    dumpQueries = True
+    dumpQueries = False
 
     def __init__(self):
         self.connect_mysql_connector_python()
@@ -89,12 +89,9 @@ class MainModel:
         return None
         
     def connect_mysql_connector_python(self):
-        print ("connect_mysql_connector_python() : checking")
         if self.is_connected():
             print ("connect_mysql_connector_python() : connected")
             return 
-
-        print ("connect_mysql_connector_python() : not connected, trying")
         
         try:
             self.connection = connect(

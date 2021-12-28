@@ -51,17 +51,13 @@ class PostsModel(MainModel):
             
         return posts
     
-    def incrementView(self, postId = None):
-        print("incrementView () : ")
-        
+    def incrementView(self, postId = None):        
         if postId == None:
             print("incrementView () : postId is None")
             return 
             
         myT = self.tablename(PostsModel.table)
         query = "UPDATE " + myT + " SET views = (views + 1) WHERE id = " + str(postId) + ";"
-        
-        print("incrementView () : query: " + query)
 
         rt = self.query(query)
         
@@ -83,9 +79,6 @@ class PostsModel(MainModel):
         comments = CommentsModel()
         res = comments.allByPost(post['id'], request, True)
         post['comments'] = res['comments_count']
-        
-        print ("Retrived post:")
-        print (post)
         
         return post
         
@@ -214,7 +207,5 @@ class PostsModel(MainModel):
             
             if offset != None:
                 query += " OFFSET " + str(offset)
-                
-        print ("Posts query: \n" + query)
-                
+        
         return query

@@ -4,3 +4,6 @@
 /src-python/myimageboard_1.egg-info/
 /src-python/myimageboard_1/views/assets/js/
 /python-env/
+/src-python/myimageboard_1/models/__pycache__/
+/src-python/myimageboard_1/controllers/__pycache__/
+/src-python/myimageboard_1/__pycache__/

@@ -15,7 +15,8 @@ class SingleController(MainController):
         
     @view_config(route_name='post')
     def single_post(self):
-        #postUrl = self.request.params.get('post_url', None)
+        print(self.request.client_addr + ' ' + self.request.url)
+        
         postUrl = self.request.matchdict['post_url']
 
         if postUrl != None and len(postUrl) > 0:

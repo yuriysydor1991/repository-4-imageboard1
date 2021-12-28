@@ -38,7 +38,7 @@ class InitModel(MainModel):
         
         self.query("""
             INSERT INTO """ + tName + """
-            (nickname, password)
+            (nickname, password, email)
             VALUES
             ('cc', 'cc', 'cc@myimageboard.kytok.org.ua')
         """)
