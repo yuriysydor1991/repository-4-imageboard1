@@ -3,6 +3,9 @@ from .UsersModel import UsersModel
 
 class CommentsModel(MainModel):
     table = "comments"
+    
+    def __init__(self):
+      super().__init__ () ;
 
     def all(self):
         cT = self.tablename(CommentsModel.table)

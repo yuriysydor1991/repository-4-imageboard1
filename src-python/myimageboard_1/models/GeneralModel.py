@@ -7,11 +7,13 @@ class GeneralModel:
         
     def home_content(self, request):
         posts = self.main.catalog_posts(request)
+        rt = {} 
         
-        rt = {
-            'posts': posts,
-            'pagination': posts["pagination"]
-        }
+        if posts != None:      
+          rt = {
+              'posts': posts,
+              'pagination': posts["pagination"]
+          }
         
         return rt
         

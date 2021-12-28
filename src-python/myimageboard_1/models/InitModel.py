@@ -4,7 +4,7 @@ from .UsersModel import UsersModel
 from .PostsModel import PostsModel
 
 # create database myimageboard_1;
-# CREATE USER 'myimageboard_1'@'localhost' IDENTIFIED WITH mysql_native_password BY 'myimageboard_1';
+# CREATE USER 'myimageboard_1'@'localhost' IDENTIFIED BY 'myimageboard_1';
 # GRANT ALL ON myimageboard_1.* TO 'myimageboard_1'@'localhost';
 
 class InitModel(MainModel):
@@ -38,23 +38,23 @@ class InitModel(MainModel):
         
         self.query("""
             INSERT INTO """ + tName + """
-            (nickname, password, email)
+            (nickname, password)
             VALUES
-            ('cc', 'cc', 'yuriysydor1991@gmail.com')
+            ('cc', 'cc', 'cc@myimageboard.kytok.org.ua')
         """)
         
         self.query("""
             INSERT INTO """ + tName + """
             (nickname, password, email)
             VALUES
-            ('cc2', 'ccnhs;jahwtehj5eoglndbkltseyo5', '2-yuriysydor1991@gmail.com')
+            ('cc2', 'ccnhs;jahwtehj5eoglndbkltseyo5', 'cc2@myimageboard.kytok.org.ua')
         """)
         
         self.query("""
             INSERT INTO """ + tName + """
             (nickname, password, email)
             VALUES
-            ('cc3', 'ccnhs;jahwtehj5eoglndbkltseyo5', '3-yuriysydor1991@gmail.com')
+            ('cc3', 'ccnhs;jahwtehj5eoglndbkltseyo5', 'cc3@myimageboard.kytok.org.ua')
         """)
 
     def initComments(self):
@@ -104,7 +104,7 @@ class InitModel(MainModel):
             """
         )
         
-        for i in range(1, 123):
+        for i in range(1, 5):
             self.query("""
             INSERT INTO """ + tName + """
             (user, title, url, img)

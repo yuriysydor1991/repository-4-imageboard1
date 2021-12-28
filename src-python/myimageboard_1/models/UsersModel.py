@@ -5,6 +5,7 @@ class UsersModel(MainModel):
     User = None
     
     def __init__(self):
+        super().__init__ () ;
         self.user = None
     
     def cleanedUser(self):

@@ -7,6 +7,9 @@ class PostsModel(MainModel):
     table = "posts"
     pagination_disp = 3
     
+    def __init__(self):
+      super().__init__ () ;
+    
     def all (self):
         myT = self.tablename(PostsModel.table)
         query = "SELECT * FROM " + myT + " ORDER BY id DESC;"
@@ -49,12 +52,24 @@ class PostsModel(MainModel):
         return posts
     
     def incrementView(self, postId = None):
+        print("incrementView () : ")
+        
         if postId == None:
+            print("incrementView () : postId is None")
             return 
+            
         myT = self.tablename(PostsModel.table)
-        query = "UPDATE " + myT + " SET views = views + 1 WHERE id = " + str(postId) + ";"
+        query = "UPDATE " + myT + " SET views = (views + 1) WHERE id = " + str(postId) + ";"
+        
+        print("incrementView () : query: " + query)
 
-        self.query(query)
+        rt = self.query(query)
+        
+        if not rt:
+            print ("incrementView() : failure while executting query \n" + query)
+            
+        return rt
+
 
     def catalog_post (self, request = None, postUrl = None):
         query = self.build_catalog_query(postUrl = postUrl)
@@ -68,6 +83,9 @@ class PostsModel(MainModel):
         comments = CommentsModel()
         res = comments.allByPost(post['id'], request, True)
         post['comments'] = res['comments_count']
+        
+        print ("Retrived post:")
+        print (post)
         
         return post
         
@@ -104,6 +122,13 @@ class PostsModel(MainModel):
         queryCnt = self.build_catalog_query(limit, offset, order, direction, search, True)
         posts = self.query_get(query)
         postsCnt = self.query_get_single(queryCnt)
+        
+        if posts == None or postsCnt == None:
+          return {
+            "list": [],
+            "all_count": 0,
+            "pagination": []
+          }  
         
         count = postsCnt['posts_count']
         
@@ -189,5 +214,7 @@ class PostsModel(MainModel):
             
             if offset != None:
                 query += " OFFSET " + str(offset)
+                
+        print ("Posts query: \n" + query)
                 
         return query

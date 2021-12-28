@@ -17,4 +17,4 @@ class MainController:
             
     def signed_user(self):
         return self.users.signed()
-        
+
